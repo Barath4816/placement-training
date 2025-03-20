@@ -9,11 +9,10 @@ class CombinationSum {
             printCombination(combination, pos); 
             return;
         }
-        if (target < 0) return;  // Stop if sum exceeds target
-
+        if (target < 0) return;
         for (int i = index; i < candidates.length; i++) {
-            combination[pos] = candidates[i];  // Store the number in the array
-            findCombinations(candidates, target - candidates[i], i, combination, pos + 1); 
+            combination[pos] = candidates[i]; 
+            findCombinations(candidates, target - candidates[i], i, combination, pos + 1);
         }
     }
 
